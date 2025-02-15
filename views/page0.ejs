@@ -1,45 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bootstrap Demo</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine's Day Cringe Page</title>
   <style>
-    /* Button Styling */
-    .interactive-btn {
-      background: linear-gradient(to bottom, #ff7eb3, #ff4d88);
-      color: white;
-      border: none;
-      border-radius: 30px;
-      padding: 12px 24px;
-      font-size: 1.5rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      font-family: 'Pacifico', cursive;
-    }
-
-    /* Hover Effect */
-    .interactive-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 10px rgba(255, 255, 255, 0.5);
-    }
-
-    /* Focus Effect */
-    .interactive-btn:focus {
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
-    }
-
-    /* Active (Pressed) Effect */
-    .interactive-btn:active {
-      transform: translateY(2px);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Body Styling */
+    /* Base Styles */
     body {
       margin: 0;
       overflow: hidden;
@@ -52,6 +19,28 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: calc(2rem + 3vw); /* Dynamic font size based on viewport width */
+      animation: heartbeat 1s infinite;
+      margin: 0;
+    }
+
+    p {
+      font-size: calc(1rem + 1vw); /* Dynamic font size based on viewport width */
+      margin-top: 20px;
+    }
+
+    /* Heartbeat Animation */
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
     }
 
     /* Emoji Styles */
@@ -73,13 +62,32 @@
         transform: translateY(-100px);
       }
     }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      /* Adjust styles for tablets and smaller screens */
+      h1 {
+        font-size: calc(1.5rem + 2vw); /* Slightly smaller font size */
+      }
+      p {
+        font-size: calc(0.8rem + 1vw); /* Slightly smaller font size */
+      }
+    }
+
+    @media (max-width: 480px) {
+      /* Adjust styles for mobile devices */
+      h1 {
+        font-size: calc(1rem + 1.5vw); /* Even smaller font size */
+      }
+      p {
+        font-size: calc(0.6rem + 1vw); /* Even smaller font size */
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- Button -->
-  <button class="interactive-btn">GET PICK UP LINE</button>
+  <h1>❤️ Be My Valentine ❤️</h1>
 
-  <!-- JavaScript for Emoji Pop-Up -->
   <script>
     // Array of cringe-worthy emojis
     const emojis = ['❤️', '💕', '💞', '💓', '💗', '💘', '💝'];
@@ -115,12 +123,10 @@
       }
     });
 
+    // Redirect to another page on click
     document.addEventListener('click', () => {
-      window.location.href = './page2.ejs'; // Replace with your target URL
+      window.location.href = './page1.ejs'; // Replace with your target URL
     });
   </script>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
